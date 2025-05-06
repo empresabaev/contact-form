@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      max-width: 1000px;
+      width: 100%;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 32px;
+      color: #001f3f;
+      margin-bottom: 40px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .form-group {
+      flex: 1;
+      min-width: 260px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: #001f3f;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      outline: none;
+      transition: border-color 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #001f3f;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #001f3f;
+      color: white;
+      padding: 16px 32px;
+      font-size: 17px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+
+    .required::after {
+      content: " *";
+      color: red;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 20px;
+      }
+
+      .form-container {
+        padding: 30px 20px;
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-container h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+
+      .form-group label {
+        font-size: 16px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        font-size: 15px;
+        padding: 12px 14px;
+      }
+
+      button {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Contáctanos</h2>
+    <form id="contact-form" action="https://formsubmit.co/aaron.baev@yahoo.com" method="POST">
+      <!-- Configuración oculta -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web">
+      <input type="hidden" name="_next" value="https://www.baevmx.site/formthanks">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">Nombre:</label>
+          <input type="text" name="nombre" required>
+        </div>
+        <div class="form-group">
+          <label class="required">Apellido:</label>
+          <input type="text" name="apellido" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Empresa:</label>
+        <input type="text" name="empresa">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">Correo electrónico:</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Teléfono:</label>
+          <input type="tel" name="telefono">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="required">Mensaje:</label>
+        <textarea name="mensaje" required></textarea>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
